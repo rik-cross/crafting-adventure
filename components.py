@@ -28,5 +28,9 @@ class Position(Component):
         self.speed = s
 
 class Control(Component):
-    def __init__(self):
+    def __init__(self,u,d,l,r):
         super().__init__()
+        self.up = u
+        self.down = d
+        self.left = l
+        self.right = r

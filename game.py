@@ -21,7 +21,7 @@ cs = ControlSystem()
 p = Entity(w)
 p.camera = Camera(0,0,800,800,track=True,entitytotrack=p)
 p.position = Position(0,0,32,32,2)
-p.control = Control()
+p.control = Control(pygame.K_UP, pygame.K_DOWN, pygame.K_LEFT, pygame.K_RIGHT)
 
 running = True
 

@@ -16,13 +16,13 @@ class ControlSystem(System):
         for e in world.entities:
             if e.control != None:
                 keys=pygame.key.get_pressed()
-                if keys[pygame.K_LEFT]:
+                if keys[e.control.left]:
                     e.position.x -= e.position.speed
-                if keys[pygame.K_RIGHT]:
+                if keys[e.control.right]:
                     e.position.x += e.position.speed
-                if keys[pygame.K_UP]:
+                if keys[e.control.up]:
                     e.position.y -= e.position.speed
-                if keys[pygame.K_DOWN]:
+                if keys[e.control.down]:
                     e.position.y += e.position.speed
 
 class GraphicsSystem(System):
@@ -55,7 +55,6 @@ class GraphicsSystem(System):
                         img = world.tilemap[i][j].image
                         xp = c.x + (c.w/2) - c.worldx + (i * world.tilesize)
                         yp = c.y + (c.h/2) - c.worldy + (j * world.tilesize)
-                        #pygame.draw.rect(screen.screen,col,pygame.Rect(xp,yp,world.tilesize,world.tilesize))
                         screen.screen.blit(img,(xp,yp))
 
                 # draw all entities
