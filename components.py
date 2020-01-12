@@ -34,3 +34,18 @@ class Control(Component):
         self.down = d
         self.left = l
         self.right = r
+
+class State(Component):
+    def __init__(self):
+        super().__init__()
+        self.state = 'idle'
+
+class Sprite(Component):
+    def __init__(self):
+        super().__init__()
+        self.sprites = {}
+        self.index = 0
+        self.animate = False
+        self.animationSpeed = 10
+        self.animationTimer = 0
+        
